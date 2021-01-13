@@ -1,0 +1,36 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+
+    <div id="newPost-view">
+        <h3>New Post</h3>
+        <form id="newPost-form">
+            {% csrf_token %}
+            <textarea class="form-control" id="content-body" autofocus
+            style="white-space: pre-wrap;"></textarea>
+        <div>
+            <input type="submit" class="btn btn-primary" value="Post"/>
+        </div>
+
+        </form>
+    </div>
+
+    <div id="follow-view" class="shadow-sm p-3 mb-5 bg-white rounded" style="display: none;">
+    </div>
+    <div id="allPost-view" >
+    </div>
+
+    <div id="pagin-view">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-end">
+              <li class="page-item">
+                <a class="page-link" id ="previous" href="#" data-page="-1">Previous</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link"  id ="next" href="#" data-page="1">Next</a>
+              </li>
+            </ul>
+          </nav>
+    </div>
+
+{% endblock %}
